@@ -1,0 +1,404 @@
+/* 
+| تم بناء ءهذا الموقع على شكل خطوات وهي 
+1-  بناء القائمه الاولى الي فوق وهي الخيارات معى عمل السلكتور الي في النهايه 
+2- بناء الواجه الولى الرئيسيه معى التنسيق والتضبيط 
+3- بناء الصفحه الثانيه كامله معى جميع الاعدادات
+4- بناء الصفحه الثالثه ابو ست صور معى العلم بطريقه مختصره لتشابه لاعدادات الصفحه الثانيه والثالثه
+5- عمل الصفحه الخامسه سته قوائم الموجوده تحت السايبر سيكيورتي للعلم تكرير بعض الكلاسات لتشابه الاعدادات 
+6- بناء الصفحه الصفحه السادسه وتضبيطه 
+7-                                                the end 
+*/
+
+/*=================================================  1  <=================================================*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;/* css3*/
+}
+
+.contener{
+    width: 80%;
+    margin: auto;/* علشان احطه في النص  */
+}
+/*   شكل الخط*/
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+a {
+    text-decoration: none; /* اشيل الخط حق الخيارات الي تحت */
+}
+/* هذا دف الكلير لحل مشكله الفلوت كي لايتاثر عنصر بعد الفلوت  */
+.clear {
+    clear: both;
+}
+/* header لون خارجي للهيدر */
+.header {
+    position: fixed; /* اخفيت القائمه الي فوق حطيتها تحت العصر الي سويته في المرحله ال 2 علشان يكون ملائم لصفحه وعدم جدوث سكرول  */
+    width: 100%;
+    z-index: 10; /* علشان اخلي القائمه من تحت الى فوق لاني حطيتها تحت المرحله رقم 2  */
+}
+/* للعلم ال لوقو صوره وعطيناها حجمها  */
+.header .logo {
+    width: 40%;
+    float: left
+}
+/*  هذا الخيارات الي فوق على اليمين */
+.header .nav {
+    width: 60%;
+    float: left;
+    list-style: none; /*  علشان اشيل النقاط السودا الي على الخيارات*/
+    text-align: right;
+}
+/* علشان اصف الخيارات جنب بعض واعطيهم طول وعرض */
+.header .nav > li {
+    display: inline-block;  
+    text-align: center;
+    text-align: right;
+}
+
+.header .nav > li > a {
+    color: #ffffff; /* لون اللخيارات  */
+    font-size: 15px;
+    display: block;
+    padding: 30px 15px;
+}
+.header .nav > li > a.active:after , /* هذي الاشياء المشتركه  */
+.header .nav > li > a:after {
+    content: "";
+    display: block;
+    height: 3px;
+    margin-top: 2px; /* علشان يبعد الخط الازرق عن الكلمه */
+    background-color:#6195ff;
+    transition: width 0.5s;
+}
+.header .nav > li > a.active:after {
+    width: 100%; 
+}
+.header .nav > li > a:after{
+    width: 0;
+}
+.header .nav > li > a:hover:after {
+    width: 100%;
+}
+
+.drobdwon{
+    position: relative;
+}
+.drobdown-menu {
+    position: absolute;
+    background: #6195ff;
+    width: 150px;
+    text-align: center;
+    left: -50%;
+    top: 70%;
+    opacity: 0;
+    visibility: hidden; /* السطر هذا والي فوقه علشان اخفي العنصر */
+    transition: opacity 0.5s , visibility 0.5s; /* انا اخفيت العنصر فوق حق الخيرات وضهرت تحت بس فيه مشكله انه سريع في الاختفى فعطيته وقت */
+}
+.drobdown-menu a{
+    color: #ffffff;
+    display: block;
+    padding: 10px;
+}
+.drobdwon:hover .drobdown-menu {
+    opacity: 1;
+    visibility: visible; /* انا اخفيت العنصر الخيارات في الدروب منيو وضهرت هنا بعد مايشر عليه  */
+}
+/*=================================================  2  <=================================================*/
+
+button{
+    font-family: inherit; /* علشان اخلي ازرار الموقع نفس خط الموقع  */
+}
+.home {
+    height: 100vh; /* علشان الصوره تملئ الشاشه */
+    background-image: url(images/background/background1.webp);
+    background-size: cover; /* css3 معناته خله ملائم لشاشه*/;
+    position: relative;
+}
+.overlay {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0; 
+    background-color:rgba(0,0,0,0.7)
+}
+.home .h1{
+    color: blanchedalmond;
+    font-size: 50px;
+}
+.home-content {
+    width: 65%;
+    position: absolute; /* علشان احط العنصر في النص لاتنسى يكون الاب ريلتف  */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); /* ليش حطيت التنراسفورم علشان الي فوق يحط في النص الي في الزايه العنصر وهذا العنصر يمسك النص الي في العنصر ويحطه في النص */
+    text-align: center; /* معناته النص حطه في النص */
+}
+.home-content p {
+    margin: 20px 0;
+    color: burlywood;
+    letter-spacing: 2px; /* علشان اسوي مسافه بين الكلمات  */
+}
+.but {
+    width: 160px;
+    padding: 15px 0;
+    border-radius: 15px; /* زاويه الزرار */
+    border: 0;
+    cursor: pointer; /* شكل الماوس ايذا ضغط على الزرار */
+    font-size: 15px;
+}
+.home .but1{
+    margin-right: 10px; /* ابعد الزرار عن بعض */
+    background: gainsboro;
+}
+.home .but2 {
+    background: rgb(161, 140, 45);
+    color: sienna;
+}
+.hover-opcty:hover{
+    opacity: 0.8; /*  سويت كلاس جديد علشان ايذا جا واحد اشر على الماوس يتغير الون وعطيه درجه الشفافيه  */ 
+}
+.hover-opcty {
+    transition: opacity 0.5s; /* علشان ايذا اشر على الخيارات يتغير الون فيصبر اقل من الثانيه قبل مايرجع لونه الاصلي  */
+    /* للعلم ال opactiy هذي في css3 وفايدتها انها علشان الموقع ماينتفض مثل الي فوق ذا السطر بس للبوتن */
+}
+/*=================================================  3  <=================================================*/
+
+.section-header {
+    text-align: center; /* لوضع النص في النصف  */
+    margin-bottom: 20px; /* علشان اشاهد العنصر الازرق */
+}
+.section-header .section-title{
+    font-size: 35px;
+    text-transform: capitalize;
+    margin-bottom: 10px;/* المسافه بين الازرق والنص الي فوقه  */
+}
+.section-header .line {
+    display: block;
+    height: 5px;
+    width: 60px;
+    margin: 0 auto 70px auto; /* علشان اوسطن العنصر الازرق  */
+    background-color: #6195ff;
+}
+/* هذا الثلاث الدفات الرئيسيه الصفحه الثانيه معى جمسع الاعدادات  */
+.pd-y {
+    padding: 120px 120px;
+}
+.about {
+
+}
+.about-ontent {
+    overflow: hidden;
+}
+.about-itme {
+    width: 30%;
+    float: left;
+    text-align: center;
+    border: 1px solid #e8e8e8;
+    padding: 50px 20px;
+}
+/* مهم جدا الي تحت ماحطيتهم بينهم مسافه لانهم اكلاسين جنب بعض  */
+.about-itme.mg{
+    margin: 0 5%; /* فوق تحت صفر حطينها فوق مايحتاج الخمسه هي المسافه الي في النص من اليمين خمسه واليسار خمسه */
+}
+.about-itme .icon {
+    color: #6195ff;
+    margin-bottom:10px;
+}
+.h2{
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    transition: color 0.5s; /* هذا علشان الهفر الي تحت الي مخليه لون الاسود  */
+}
+.p {
+    line-height: 1.6; /* المسافه بين السطور في الثلاث العناصر */
+    margin-bottom: 10px;
+    color: #999999;
+}
+.a {
+    color: #6195ff;
+    text-transform: capitalize;
+}
+
+.ltr-effet {
+    position: relative;/* علشان العنصر مايتاثر الي هو الي تحت  */
+}
+.ltr-effet:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    top: 0;
+    right: o;
+    left: 0;
+    bottom: 0;
+    background: #333333;
+    z-index: -1; /* معناته خلي اشغل كله ورى الكلام  */
+    transition: width 0.5s;
+}
+.ltr-effet:hover:after /* معناته ايذا اشرت عليه عطني الافتر  */
+{
+    width: 100%;
+}
+.about-itme:hover .h2{
+    color: seashell;
+}
+/*=================================================  4  <=================================================*/
+.protfolio {
+    background: #f9f9f9;
+}
+.protfolio-ontent {
+    overflow: hidden;
+}
+.protfolio-itme {
+    width: 32%;
+    float: left;
+    margin-bottom: 60px;
+    position: relative; /* علشان اخلي عنصر فوق عنصر ولايتاثر للي تحت */
+    padding: 20px;
+}
+.protfolio-itme .layer-content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    visibility: hidden;
+    opacity: 0; /* اجبرت العنصر يختفي حتى يتم الاشاره عليه الي هو معى الصحه الثالثه  */
+    transition: opacity 0.5s;
+}
+.protfolio-itme:hover .layer-content {
+    opacity: 1;
+    visibility: visible;
+}
+.layer-content .layer-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    text-align: center;
+    transform: translate(-50% , -50%);
+}
+.p-a .h3{
+    color: #6195ff;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px ;
+}
+.h3 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+.layer-content a {
+    color: #ffffff;
+}
+.layer-content a i {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #6195ff;
+    line-height: 40px;
+}
+.protfolio-itme img{
+    width: 100%; /* علشان الصصوره تجيك كامله ميه في الميه من الثلاثسن الي فوق  */
+}
+.protfolio-itme.mg{
+    margin: 0 2%;
+} 
+/*=================================================  5  <=================================================*/
+.ofer-container {
+    overflow: hidden;
+}
+.ofer-itme {
+    width: 30%;
+    float: left;
+    margin-bottom: 20px ;
+    border: 1px solid #e8e8e8;
+    padding: 30px 15px 30px 70px;
+    position: relative;
+
+}
+.ofer-itme .icon {
+    position: absolute;
+    left: 15px;
+    top: 35px;
+    color: #6195ff;
+}
+.ofer-itme.mg {
+    margin: 0 5%;
+}
+.h2-offe{
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
+.p-offer{
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #999999;
+}
+.ofer-itme:hover .h2-offer{
+    color: #ffffff;
+    transition: color 0.5s;
+}
+/*=================================================  6  <=================================================*/
+.servies{
+    background-color: #f9f9f9;
+}
+
+.servies-itme{
+    width: 50%;
+    float: left;
+}
+.img-servies img {
+    width: 100%;
+}
+
+.servies-itme .section-header {
+    text-align: left;
+}
+.servies-itme .section-header .line{
+    margin: 0 0 40px 0;
+}
+.p-servies {
+    padding-right: 20px;
+    color: #999999;
+    line-height: 1.4;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+.list-servies {
+    list-style: none;
+}
+.list-servies li {
+    margin-bottom: 10px;
+    color: #999999;
+}
+.list-servies li i {
+    border: 1px solid #6195ff;
+    color: #6195ff;
+    width: 30px;
+    height: 30px;
+    padding: 7px;
+    border-radius: 50%;
+}
+.ul1-servies {
+    list-style: none;
+    text-align: center;
+}
+.ul1-servies li {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-color: #999999;
+    margin: 10px 5px;
+}
+.ul1-servies .active {
+    background-color: #6195ff;
+}
+.ul1-servies li:hover{
+    background-color: #6195ff;
+}
+/*=================================================  7  <=================================================*/
